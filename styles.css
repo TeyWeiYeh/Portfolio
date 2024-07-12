@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.title h1{
+    color: whitesmoke;
+}
+
+.tp-link{
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.tp-link:after{
+    content: '';
+    width: 0; height: 3px;
+    display: block;
+    position: absolute;
+    margin-top: 2px;
+    right: 0;
+    background: #fff;
+    transition: width .2s ease;
+    -webkit-transition: width .2s ease;
+}
+
+.tp-link:hover::after{
+    width: 100%;
+    left: 0;
+    background: #fff;
+}
+
+.landing-page{
+    background-color: #171717;
+    color: white;
+}
+
+.project-2{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #f2f2f2;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    overflow: hidden;
+}
+
+.project-2 .image-container{
+    background-color: #171717;
+    flex-shrink: 1;
+    width: 480px;
+    height: 430px;
+    margin: 50px 30px 30px;
+}
+
+.image{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.project-2 .content{
+    margin: 50px 30px 0px;
+    flex-shrink: 1;
+    height: 430px;
+    text-align: start;
+    padding: 0 10% 10% 0;
+    flex-wrap: wrap;
+}
+
+.content h2{
+    font-weight: 700;
+}
+
+.capstone-link{
+    text-decoration: none;
+    color: #171717;
+    font-size: 1.25em;
+}
+
+.capstone-link:hover{
+    font-size: 1.5em;
+}
+
+.icon-square{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+}
+
+#hanging-icons > h2{
+    font-weight: 700;
+}
+
+#second-capstone{
+    background-color: transparent;
+}
+
+#second-capstone .image-container{
+    background-color: transparent;
+}
+
+#second-capstone .image-container img{
+    object-fit: fill;
+}
+
+#footer{
+    background-color: #171717;
+}
+
+#copyright{
+    color: #fff;
+}
+
+@media (min-width: 300px) and (max-width: 800px) {
+    .project-2 .content{
+        margin: 10px 30px 30px;
+        flex-shrink: 1;
+        height: auto;
+        text-align: center;
+        padding: 0 10% 10% 10%;
+        flex-wrap: wrap;
+        padding-bottom: 30px;
+    }
+
+}
