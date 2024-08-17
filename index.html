@@ -11,12 +11,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
 </head>
+<header>
+  <div class="header">
+    <ul class="nav-item">
+      <li><a href="#">Home</a></li>
+      <li><a href="#one">Hobbies</a></li>
+      <li><a href="#hanging-icons">Projects</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#footer">Contact</a></li>
+    </ul>
+  </div>
+  <div class="icon" id="icon1">
+    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="white" class="bi bi-list" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+    </svg>
+  </div>
+</header>
 <body>
+  <div id="flyout" class="not-visible">
+    <button class="flyout-close btn" id="hide-nav-bar">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-x" viewBox="0 0 16 16">
+          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+      </svg>
+      <span class="close-text">Close</span>
+  </button>
+  </div>
   <div class="landing-page">
     <div class="container col-xxl-8 px-4 pb-5 ">
-      <div class="row flex-lg-row-reverse align-items-center g-5 pt-5">
-        <div class="col-10 col-md-12 col-lg-6 col-sm-12 ml-sm-0">
-          <img class="col-sm-10 col-md-8 col-lg-9" src="./images/profile-pic.jpg" height="600">
+      <div class="row flex-lg-row-reverse align-items-center g-5 pt-md-5 pt-sm-5 pt-lg-5 pt-xl-5 pt-3">
+        <div class="col-md-12 col-lg-6 col-sm-12 ml-sm-0">
+          <img class="col-sm-10 col-md-8 col-lg-9 image" src="./images/profile-pic.jpg" height="600" width="auto">
         </div>
         <div class="col-lg-6 col-md-12 col-sm-12">
           <h1 class="display-5 fw-bold lh-1 mb-3 title">I am a <span>STUDENT</span></h1>
@@ -79,11 +103,11 @@
   </div>
   <div class="project-2" id="second-capstone">
     <div class="image-container">
-      <img class="image" src="./images/Tin Dog Project.png" height="80%"></img>
+      <img class="image" src="./images/Tin Dog Project.png" height="100%"></img>
     </div>
     <div class="content">
       <h2>My Second Capstone Project</h2>
-        <p class="lead">The first time doing a capstone project after learning CSS <br> You may visit the page in the link below <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+        <p class="lead">Second Capstone Project with Bootstrap CSS <br> You may visit the page in the link below <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
         </svg></p>
         <a class="capstone-link" href="https://teyweiyeh.github.io/TinDogProject/" target="_blank">Click here to find out more</a>
@@ -91,7 +115,7 @@
   </div>
   <section id="footer" class="background">
     <div class="container">
-      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3">
         <div class="col-md-4 d-flex align-items-center">
           <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
             <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
@@ -115,5 +139,22 @@
     </section>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+  document.getElementById("icon1").addEventListener("click", displayNavBar);
+  document.getElementById("hide-nav-bar").addEventListener("click", closeNavBar);
+  
+  function displayNavBar(){
+    document.getElementById("flyout").classList.remove("not-visible");
+    setTimeout(() => {
+        document.getElementById("flyout").classList.add("mobile-nav-bar");
+    }, 10);
+    document.getElementById("icon1").classList.add("icon-visibility");
+  }
+
+  function closeNavBar(){
+    document.getElementById("flyout").classList.add("not-visible");
+    document.getElementById("icon1").classList.remove("icon-visibility");
+  }
+</script>
 </html>
 

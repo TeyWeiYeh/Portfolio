@@ -1,5 +1,64 @@
-*{
+body, html {
     margin: 0;
+    padding: 0;
+}
+
+.header{
+    position: fixed;
+    top:0;
+    width: 100vw;
+    height: auto;
+    background-color: #171717;
+}
+
+.icon-visibility{
+    visibility: hidden;
+    background-color: #171717;
+}
+
+.not-visible{
+    display: none;
+}
+
+.mobile-nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0; /* Add this line to ensure it's flush with the left edge */
+    width: 200px;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.4);
+    z-index: 99999;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-text{
+    color: white;
+}
+
+.nav-item{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 8%;
+    margin-top:10px;
+}
+
+.nav-item li{
+    font-size: 1.25rem;
+    list-style-type: none;
+    padding: 0px 0px 0px 30px;
+}
+
+.nav-item li a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.nav-item li:hover{
+    cursor: pointer;
+}
+
+.nav-item li:first-of-type{
     padding: 0;
 }
 
@@ -37,6 +96,12 @@
     color: white;
 }
 
+.landing-page img{
+    width: 100% !important;
+    height: 100%;
+    padding-top: 0;
+}
+
 .project-2{
     display: flex;
     flex-wrap: wrap;
@@ -53,12 +118,12 @@
     flex-shrink: 1;
     width: 480px;
     height: 430px;
-    margin: 50px 30px 30px;
+    margin: 50px 30px 50px;
 }
 
 .image{
-    max-width: 100%;
-    max-height: 100%;
+    width: 100% !important;
+    height: 100%;
 }
 
 .project-2 .content{
@@ -77,11 +142,12 @@
 .capstone-link{
     text-decoration: none;
     color: #171717;
-    font-size: 1.25em;
+    font-size: 1em;
+    font-weight: 700;
 }
 
 .capstone-link:hover{
-    font-size: 1.5em;
+    font-size: 1.25em;
 }
 
 .icon-square{
@@ -99,7 +165,10 @@
 }
 
 #second-capstone .image-container{
+    position: inherit;
     background-color: transparent;
+    margin: 50px 30px 50px;
+    
 }
 
 #second-capstone .image-container img{
@@ -108,13 +177,14 @@
 
 #footer{
     background-color: #171717;
+    height: 100%;
 }
 
 #copyright{
     color: #fff;
 }
 
-@media (min-width: 300px) and (max-width: 800px) {
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     .project-2 .content{
         margin: 10px 30px 30px;
         flex-shrink: 1;
@@ -123,6 +193,10 @@
         padding: 0 10% 10% 10%;
         flex-wrap: wrap;
         padding-bottom: 30px;
+    }
+
+    .header {
+        display: none;
     }
 
 }
